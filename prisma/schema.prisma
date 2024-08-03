@@ -19,4 +19,10 @@ model User {
   avatarUrl String?
   bio String?
   sessions Session[]
+
+  cratedAt DateTime @default(now())
+
+  @@map("users")
 }
+
+model Session {}
