@@ -8,7 +8,12 @@ export async function signUp(
 ): Promise<{ error: string }> {
   try {
     const { username, email, password } = signUpSchema.parse(credentials);
-    const passwordHash = await hash(password);
+    const passwordHash = await hash(password, {
+      memoryCost: 19456,
+      timeCost: 2,
+      outputLen: 32,
+      parallelism: 1,
+    });
   } catch (error) {
     console.error(error);
     return {
