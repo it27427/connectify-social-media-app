@@ -2,6 +2,7 @@
 
 import { signUpSchema, SignUpValues } from '@/lib/validation';
 import { hash } from '@node-rs/argon2';
+import { generateIdFromEntropySize } from 'lucia';
 
 export async function signUp(
   credentials: SignUpValues
@@ -14,6 +15,7 @@ export async function signUp(
       outputLen: 32,
       parallelism: 1,
     });
+    const userId = generateIdFromEntropySize(10);
   } catch (error) {
     console.error(error);
     return {
