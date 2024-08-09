@@ -32,6 +32,15 @@ export async function signUp(
         error: 'Username already taken.',
       };
     }
+
+    const existingEmail = await prisma.user.findFirst({
+      where: {
+        email: {
+          equals: email,
+          mode: 'insensitive',
+        },
+      },
+    });
   } catch (error) {
     console.error(error);
     return {
