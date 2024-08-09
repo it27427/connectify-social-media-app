@@ -26,6 +26,12 @@ export async function signUp(
         },
       },
     });
+
+    if (existingUsername) {
+      return {
+        error: 'Username already taken.',
+      };
+    }
   } catch (error) {
     console.error(error);
     return {
