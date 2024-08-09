@@ -22,6 +22,7 @@ export async function signUp(
       where: {
         username: {
           equals: username,
+          mode: 'insensitive',
         },
       },
     });
