@@ -1,9 +1,12 @@
 'use server';
 
+import { lucia } from '@/auth';
 import prisma from '@/lib/prisma';
 import { signUpSchema, SignUpValues } from '@/lib/validation';
 import { hash } from '@node-rs/argon2';
 import { generateIdFromEntropySize } from 'lucia';
+import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
 
 export async function signUp(
   credentials: SignUpValues
@@ -57,6 +60,16 @@ export async function signUp(
         passwordHash,
       },
     });
+
+    const session = await lucia.createSession(userId, {});
+    const sessionCookie = lucia.createSessionCookie(session.id);
+    cookies().set(
+      sessionCookie.name,
+      sessionCookie.value,
+      sessionCookie.attributes
+    );
+
+    return redirect('/');
   } catch (error) {
     console.error(error);
     return {
