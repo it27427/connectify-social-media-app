@@ -41,6 +41,12 @@ export async function signUp(
         },
       },
     });
+
+    if (existingEmail) {
+      return {
+        error: 'Email address already exists.',
+      };
+    }
   } catch (error) {
     console.error(error);
     return {
