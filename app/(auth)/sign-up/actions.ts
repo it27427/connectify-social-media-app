@@ -47,6 +47,16 @@ export async function signUp(
         error: 'Email address already exists.',
       };
     }
+
+    await prisma.user.create({
+      data: {
+        id: userId,
+        username,
+        displayName: username,
+        email,
+        passwordHash,
+      },
+    });
   } catch (error) {
     console.error(error);
     return {
