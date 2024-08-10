@@ -3,6 +3,7 @@
 import prisma from '@/lib/prisma';
 import { signInSchema, SignInValues } from '@/lib/validation';
 import { isRedirectError } from 'next/dist/client/components/redirect';
+import { verify } from '@node-rs/argon2';
 
 export async function signIn(
   credentials: SignInValues
@@ -17,6 +18,14 @@ export async function signIn(
         },
       },
     });
+
+    if (!existingUser || !existingUser.passwordHash) {
+      return {
+        error: 'Incorrect email or password.',
+      };
+    }
+
+    const validPassword = await verify(existingUser.passwordHash, password);
   } catch (error) {
     if (isRedirectError(error)) throw error;
     console.error(error);
