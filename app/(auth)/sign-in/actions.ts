@@ -1,3 +1,5 @@
 'user server';
 
-export async function signIn() {}
+import { SignInValues } from '@/lib/validation';
+
+export async function signIn(credentials: SignInValues) {}
