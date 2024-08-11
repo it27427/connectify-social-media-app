@@ -11,7 +11,9 @@ export default function page() {
     <main className='flex items-center justify-center h-screen'>
       <div className='flex h-full max-h-[40rem] w-full max-w-[64rem] rounded-2xl shadow-2xl overflow-hidden bg-card'>
         <div className='md:w-1/2 w-full space-y-10 overflow-y-auto p-10'>
-          <h2>Sign Up Form</h2>
+          <hgroup className='space-y-1 text-center'>
+            <h1 className='text-3xl font-bold'>Sign up to Connectify</h1>
+          </hgroup>
         </div>
 
         <Image
