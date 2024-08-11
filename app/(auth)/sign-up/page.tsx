@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import signUpThumbnail from '@/assets/images/signup.jpg';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Sign Up',
@@ -14,9 +15,21 @@ export default function page() {
           <hgroup className='space-y-1 text-center'>
             <h1 className='text-3xl font-bold'>Sign up to Connectify</h1>
             <h5 className='text-muted-foreground'>
-              A place where even you can make a friend.
+              A place where even <span className='italic'>you</span> can make a
+              friend.
             </h5>
           </hgroup>
+
+          <div className='space-y-5'>
+            <h2>Sign up form</h2>
+
+            <p className='text-center'>
+              Already have an account?{' '}
+              <Link href='/sign-in' className='hover:underline'>
+                Sign In
+              </Link>
+            </p>
+          </div>
         </div>
 
         <Image
