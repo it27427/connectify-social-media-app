@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import signUpThumbnail from '@/assets/images/signup.jpg';
 import Image from 'next/image';
 import Link from 'next/link';
+import SignUpForm from '@/components/SignUpForm';
 
 export const metadata: Metadata = {
   title: 'Sign Up',
@@ -21,7 +22,7 @@ export default function page() {
           </hgroup>
 
           <div className='space-y-5'>
-            <h2>Sign up form</h2>
+            <SignUpForm />
 
             <p className='text-center'>
               Already have an account?{' '}
