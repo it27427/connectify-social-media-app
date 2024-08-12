@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import { SignUpValues } from '@/lib/validation';
 
 const SignUpForm = () => {
   return (
