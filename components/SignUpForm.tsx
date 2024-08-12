@@ -1,9 +1,17 @@
 'use client';
-import { SignUpValues } from '@/lib/validation';
+import { signUpSchema, SignUpValues } from '@/lib/validation';
 import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 const SignUpForm = () => {
-  const form = useForm<SignUpValues>({});
+  const form = useForm<SignUpValues>({
+    resolver: zodResolver(signUpSchema),
+    defaultValues: {
+      email: '',
+      username: '',
+      password: '',
+    },
+  });
 
   return (
     <div>
