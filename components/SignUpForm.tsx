@@ -18,7 +18,7 @@ const SignUpForm = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}></form>
+      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-3'></form>
     </Form>
   );
 };
