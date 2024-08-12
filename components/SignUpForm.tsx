@@ -13,6 +13,8 @@ const SignUpForm = () => {
     },
   });
 
+  async function onSubmit(values: SignUpValues) {}
+
   return (
     <div>
       <h2>SignUpForm</h2>
