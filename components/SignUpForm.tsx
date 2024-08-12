@@ -2,6 +2,7 @@
 import { signUpSchema, SignUpValues } from '@/lib/validation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { Form } from './ui/form';
 
 const SignUpForm = () => {
   const form = useForm<SignUpValues>({
@@ -16,9 +17,9 @@ const SignUpForm = () => {
   async function onSubmit(values: SignUpValues) {}
 
   return (
-    <div>
-      <h2>SignUpForm</h2>
-    </div>
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)}></form>
+    </Form>
   );
 };
 
