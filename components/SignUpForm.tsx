@@ -42,7 +42,7 @@ const SignUpForm = () => {
           )}
         />
 
-        <Button>Sign Up</Button>
+        <Button type='submit'>Sign Up</Button>
       </form>
     </Form>
   );
