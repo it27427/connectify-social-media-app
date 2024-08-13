@@ -11,6 +11,7 @@ import {
   FormMessage,
 } from './ui/form';
 import { Input } from './ui/input';
+import { Button } from './ui/button';
 
 const SignUpForm = () => {
   const form = useForm<SignUpValues>({
@@ -40,6 +41,8 @@ const SignUpForm = () => {
             </FormItem>
           )}
         />
+
+        <Button>Sign Up</Button>
       </form>
     </Form>
   );
