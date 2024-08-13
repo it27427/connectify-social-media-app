@@ -1,4 +1,5 @@
 'use client';
+import { useState, useTransition } from 'react';
 import { signUpSchema, SignUpValues } from '@/lib/validation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -14,6 +15,9 @@ import { Input } from './ui/input';
 import { Button } from './ui/button';
 
 const SignUpForm = () => {
+  const [error, setError] = useState<string>();
+  const [isPending, setIsPending] = useTransition();
+
   const form = useForm<SignUpValues>({
     resolver: zodResolver(signUpSchema),
     defaultValues: {
