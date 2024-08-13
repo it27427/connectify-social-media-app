@@ -27,7 +27,9 @@ const SignUpForm = () => {
     },
   });
 
-  async function onSubmit(values: SignUpValues) {}
+  async function onSubmit(values: SignUpValues) {
+    setError(undefined);
+  }
 
   return (
     <Form {...form}>
