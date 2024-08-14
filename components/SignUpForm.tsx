@@ -40,6 +40,8 @@ const SignUpForm = () => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
+        {error && <p className='text-destructive text-center'>{error}</p>}
+
         <FormField
           control={form.control}
           name='username'
