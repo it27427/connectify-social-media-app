@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const PasswordInput = () => {
-  return (
-    <div>
-      <h2>PasswordInput</h2>
-    </div>
-  );
-};
+const PasswordInput = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, type, ...props }, ref) => {
+    const [showPassword, setShowPassword] = useState(false);
 
-export default PasswordInput;
+    return (
+      <div>
+        <h2>PasswordInput</h2>
+      </div>
+    );
+  }
+);
+
+PasswordInput.displayName = 'PasswordInput';
+
+export { PasswordInput };
