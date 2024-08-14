@@ -32,6 +32,8 @@ const SignUpForm = () => {
     setError(undefined);
     startTransition(async () => {
       const { error } = await signUp(values);
+
+      if (error) setError(error);
     });
   }
 
