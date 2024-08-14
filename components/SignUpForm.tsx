@@ -13,6 +13,7 @@ import {
 } from './ui/form';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
+import { signUp } from '@/app/(auth)/sign-up/actions';
 
 const SignUpForm = () => {
   const [error, setError] = useState<string>();
@@ -29,6 +30,9 @@ const SignUpForm = () => {
 
   async function onSubmit(values: SignUpValues) {
     setError(undefined);
+    startTransition(async () => {
+      const { error } = await signUp(values);
+    });
   }
 
   return (
