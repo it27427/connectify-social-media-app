@@ -16,7 +16,7 @@ import { Button } from './ui/button';
 
 const SignUpForm = () => {
   const [error, setError] = useState<string>();
-  const [isPending, setIsPending] = useTransition();
+  const [isPending, startTransition] = useTransition();
 
   const form = useForm<SignUpValues>({
     resolver: zodResolver(signUpSchema),
