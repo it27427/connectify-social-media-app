@@ -14,6 +14,7 @@ import {
 import { Input } from './ui/input';
 import { Button } from './ui/button';
 import { signUp } from '@/app/(auth)/sign-up/actions';
+import { PasswordInput } from './PasswordInput';
 
 const SignUpForm = () => {
   const [error, setError] = useState<string>();
@@ -77,7 +78,7 @@ const SignUpForm = () => {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <Input placeholder='Password' type='password' {...field} />
+                <PasswordInput />
               </FormControl>
               <FormMessage />
             </FormItem>
