@@ -50,7 +50,7 @@ const SignUpForm = () => {
             <FormItem>
               <FormLabel>Username</FormLabel>
               <FormControl>
-                <Input placeholder='Username' {...field} />
+                <Input placeholder='Enter username' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -64,7 +64,11 @@ const SignUpForm = () => {
             <FormItem>
               <FormLabel>Email Address</FormLabel>
               <FormControl>
-                <Input placeholder='Email address' type='email' {...field} />
+                <Input
+                  placeholder='Enter email address'
+                  type='email'
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
