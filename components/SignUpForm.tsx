@@ -82,7 +82,7 @@ const SignUpForm = () => {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <PasswordInput />
+                <PasswordInput placeholder='Enter password' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
