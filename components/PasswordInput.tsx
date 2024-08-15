@@ -12,6 +12,7 @@ const PasswordInput = React.forwardRef<HTMLInputElement, InputProps>(
           type={showPassword ? 'text' : 'password'}
           className={cn('pe-0', className)}
           ref={ref}
+          {...props}
         />
       </div>
     );
