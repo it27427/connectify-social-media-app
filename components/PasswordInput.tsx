@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Input } from './ui/input';
+import { cn } from '@/lib/utils';
 
 const PasswordInput = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, ...props }, ref) => {
@@ -7,7 +8,10 @@ const PasswordInput = React.forwardRef<HTMLInputElement, InputProps>(
 
     return (
       <div className='relative'>
-        <Input type={showPassword ? 'text' : 'password'} />
+        <Input
+          type={showPassword ? 'text' : 'password'}
+          className={cn('', className)}
+        />
       </div>
     );
   }
