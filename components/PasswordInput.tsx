@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Input } from './ui/input';
+import { Input, InputProps } from './ui/input';
 import { cn } from '@/lib/utils';
 import { Eye, EyeOff } from 'lucide-react';
 
