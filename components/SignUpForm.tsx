@@ -12,7 +12,6 @@ import {
   FormMessage,
 } from './ui/form';
 import { Input } from './ui/input';
-import { Button } from './ui/button';
 import { signUp } from '@/app/(auth)/sign-up/actions';
 import { PasswordInput } from './PasswordInput';
 import LoadingButton from './LoadingButton';
