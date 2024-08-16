@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import signInThumbnail from '@/assets/images/signin.jpg';
 import Link from 'next/link';
+import SignInForm from '@/components/SignInForm';
 
 export const metadata: Metadata = {
   title: 'Sign In',
@@ -17,7 +18,7 @@ export default function page() {
           </h1>
 
           <div className='space-y-5'>
-            {/* <SignInForm /> */}
+            <SignInForm />
 
             <p className='text-center'>
               Don't have any account?{' '}
