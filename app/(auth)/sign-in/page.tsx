@@ -21,7 +21,7 @@ export default function page() {
             <SignInForm />
 
             <p className='text-center'>
-              Don't have any account?{' '}
+              Don&apos;t have any account?{' '}
               <Link href='/sign-up' className='hover:underline'>
                 Sign Up
               </Link>
