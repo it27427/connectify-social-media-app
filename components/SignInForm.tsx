@@ -1,4 +1,5 @@
 'use client';
+import { signIn } from '@/app/(auth)/sign-in/actions';
 import { signInSchema, SignInValues } from '@/lib/validation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import React, { useState, useTransition } from 'react';
@@ -15,6 +16,15 @@ const SignInForm = () => {
       password: '',
     },
   });
+
+  async function onSubmit(values: SignInValues) {
+    setError(undefined);
+    startTransition(async () => {
+      const { error } = await signIn(values);
+
+      if (error) setError(error);
+    });
+  }
 
   return (
     <div>
