@@ -1,9 +1,20 @@
 'use client';
-import { signIn } from '@/app/(auth)/sign-in/actions';
+import { useState, useTransition } from 'react';
 import { signInSchema, SignInValues } from '@/lib/validation';
-import { zodResolver } from '@hookform/resolvers/zod';
-import React, { useState, useTransition } from 'react';
 import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from './ui/form';
+import { Input } from './ui/input';
+import { signIn } from '@/app/(auth)/sign-in/actions';
+import { PasswordInput } from './PasswordInput';
+import LoadingButton from './LoadingButton';
 
 const SignInForm = () => {
   const [error, setError] = useState<string>();
@@ -27,9 +38,43 @@ const SignInForm = () => {
   }
 
   return (
-    <div>
-      <h1>SignInForm</h1>
-    </div>
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
+        {error && <p className='text-destructive text-center'>{error}</p>}
+
+        <FormField
+          control={form.control}
+          name='username'
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Username</FormLabel>
+              <FormControl>
+                <Input placeholder='Enter username' {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name='password'
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Password</FormLabel>
+              <FormControl>
+                <PasswordInput placeholder='Enter password' {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <LoadingButton loading={isPending} type='submit' className='w-full'>
+          Sign In
+        </LoadingButton>
+      </form>
+    </Form>
   );
 };
 
