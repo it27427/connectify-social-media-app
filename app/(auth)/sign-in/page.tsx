@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 
 export default function page() {
   return (
-    <main>
+    <main className='flex items-center justify-center h-screen'>
       <h2>Sign In Page</h2>
     </main>
   );
