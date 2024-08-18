@@ -8,4 +8,4 @@ interface SessionContext {
   session: Session;
 }
 
-const SessionContext = createContext<SessionContext>();
+const SessionContext = createContext<SessionContext | null>(null);
