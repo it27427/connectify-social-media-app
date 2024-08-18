@@ -10,4 +10,4 @@ interface SessionContext {
 
 const SessionContext = createContext<SessionContext | null>(null);
 
-export default function SessionProvider() {}
+export default function SessionProvider({ children, value }) {}
