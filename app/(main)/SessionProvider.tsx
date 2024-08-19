@@ -18,3 +18,5 @@ export default function SessionProvider({
     <SessionContext.Provider value={value}>{children}</SessionContext.Provider>
   );
 }
+
+export function useSession() {}
