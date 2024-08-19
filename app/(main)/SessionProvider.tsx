@@ -14,5 +14,7 @@ export default function SessionProvider({
   children,
   value,
 }: React.PropsWithChildren<{ value: SessionContext }>) {
-  <SessionContext.Provider value={value}>{children}</SessionContext.Provider>;
+  return (
+    <SessionContext.Provider value={value}>{children}</SessionContext.Provider>
+  );
 }
