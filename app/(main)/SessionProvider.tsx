@@ -24,4 +24,5 @@ export function useSession() {
   if (!context) {
     throw new Error('useSession must be used within a SessionProvider!');
   }
+  return context;
 }
