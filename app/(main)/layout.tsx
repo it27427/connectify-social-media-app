@@ -11,7 +11,7 @@ const MainLayout = async ({ children }: { children: React.ReactNode }) => {
   return (
     <SessionProvider value={session}>
       <Header />
-      <main>{children}</main>
+      <main className='flex flex-col min-h-screen'>{children}</main>
     </SessionProvider>
   );
 };
