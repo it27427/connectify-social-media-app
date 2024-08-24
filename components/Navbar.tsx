@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import UserButton from './UserButton';
 
 const Navbar = () => {
   return (
@@ -7,6 +8,8 @@ const Navbar = () => {
       <Link href={'/'} className='text-primary text-2xl font-bold'>
         Connectify
       </Link>
+
+      <UserButton />
     </nav>
   );
 };
