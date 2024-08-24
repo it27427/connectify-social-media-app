@@ -1,4 +1,5 @@
 'use client';
+import { useSession } from '@/app/(main)/SessionProvider';
 import React from 'react';
 
 interface UserButtonProps {
@@ -6,6 +7,8 @@ interface UserButtonProps {
 }
 
 const UserButton = ({ className }: UserButtonProps) => {
+  const {} = useSession();
+
   return <div>UserButton</div>;
 };
 
