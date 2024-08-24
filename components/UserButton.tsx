@@ -1,7 +1,11 @@
 'use client';
 import React from 'react';
 
-const UserButton = () => {
+interface UserButtonProps {
+  className?: string;
+}
+
+const UserButton = ({ className }: UserButtonProps) => {
   return <div>UserButton</div>;
 };
 
