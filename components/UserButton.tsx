@@ -7,7 +7,7 @@ interface UserButtonProps {
 }
 
 const UserButton = ({ className }: UserButtonProps) => {
-  const {} = useSession();
+  const { user } = useSession();
 
   return <div>UserButton</div>;
 };
