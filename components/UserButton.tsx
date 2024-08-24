@@ -1,6 +1,7 @@
 'use client';
 import { useSession } from '@/app/(main)/SessionProvider';
 import React from 'react';
+import { DropdownMenu } from './ui/dropdown-menu';
 
 interface UserButtonProps {
   className?: string;
@@ -9,7 +10,11 @@ interface UserButtonProps {
 const UserButton = ({ className }: UserButtonProps) => {
   const { user } = useSession();
 
-  return <div>UserButton</div>;
+  return (
+    <>
+      <DropdownMenu></DropdownMenu>
+    </>
+  );
 };
 
 export default UserButton;
